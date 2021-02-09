@@ -7,9 +7,9 @@ defmodule MyAppWeb.PageLiveTest do
     {:ok, page_live, disconnected_html} = live(conn, "/")
 
     assert disconnected_html =~
-             "Welcome to Phoenix!"
+             "Welcome to O'Hare!" |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
 
     assert render(page_live) =~
-             "Welcome to Phoenix!"
+             "Welcome to O'Hare!" |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
   end
 end
